@@ -1,0 +1,14 @@
+<%= simple_form_for @order_form do |f| %>
+  <%= f.input :order_date %>
+  
+  <div id='orders'>
+      <%= f.simple_fields_for :orders do |order| %>
+        <%= render 'order_fields', f: order %>
+      <% end %>
+      <div class='links'>
+          <%= link_to_add_association '注文を追加', f, :orders %>
+      </div>
+  </div>
+  
+  <%= f.button :submit %>
+<% end %>

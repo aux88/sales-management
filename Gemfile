@@ -17,7 +17,7 @@ gem 'bootstrap-sass'
 gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'simple_form'
-gem 'nested_form'
+gem 'cocoon'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'hub', :require=>nil

@@ -1,12 +1,2 @@
 <h1>注文書の新規作成</h1>
-<%= simple_nested_form_for @order_form do |f| %>
-  <%= f.input :order_date %>
-  <%= f.simple_fields_for :orders do |o| %>
-      <%= o.input :title %>
-      <%= o.input :date %>
-      <%= o.input :quantity %>
-      <%= o.link_to_remove "削除" %>
-  <% end %>
-  <%= f.link_to_add "追加", :orders, {} %>
-  <%= f.button :submit %>
-<% end %>
+<%= render 'form' %>

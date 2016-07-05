@@ -1,8 +1,8 @@
 <div class='nested-fields'>
     <div class='order'>
         <%= f.input :title %>
-        <%= f.input :date %>
-        <%= f.input :quantity %>
+        <%= f.input :date, include_blank: true %>
+        <%= f.input :quantity, input_html: { value: 1, min: 1, max: 99, class: "quantity" } %>
         <%= link_to_remove_association '削除', f %>
     </div>
 </div>

@@ -1,6 +1,5 @@
 <%= simple_form_for @order_form do |f| %>
   <%= f.input :order_date %>
-  
   <div id='orders'>
       <%= f.simple_fields_for :orders do |order| %>
         <%= render 'order_fields', f: order %>

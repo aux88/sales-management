@@ -18,6 +18,7 @@ gem 'omniauth'
 gem 'omniauth-google-oauth2'
 gem 'simple_form'
 gem 'cocoon'
+gem 'ransack'
 gem 'therubyracer', :platform=>:ruby
 group :development do
   gem 'hub', :require=>nil

@@ -12,4 +12,8 @@ class CustomersController < ApplicationController
         
     end
     
+    def show
+        @customer = Customer.find_by_id(params[:id]) if params[:id]
+        redirect_to request.referrer unless @customer
+    end
 end

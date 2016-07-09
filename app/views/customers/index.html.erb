@@ -2,16 +2,33 @@
 
 <%= search_form_for @q do |f| %>
 
-  <%# start 名前から検索 %>
+  <%# 名前から検索 %>
   <%= f.label :name_cont, "名前" %>
   <%= f.search_field :name_cont %>
   <br />
 
   <%# 検索ボタン %>
-  <%= f.submit %>
+  <%= f.button :submit, :class=>'btn-primary' %>
 
 <% end %>
 
-<% @customers.each do |customer| %>
-    <%= customer.name %>
-<% end %>
+<div class="container">
+    <table class="table">
+        <thead>
+      <tr>
+        <th>#</th>
+        <th>名前</th>
+        </th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @customers.each.with_index(1) do |customer, index| %>
+      <tr>
+        <th scope="row"><%= index %></th>
+        <td><%= customer.name %></td>
+        <td><%= link_to '表示', customer_path(customer) %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+</div>

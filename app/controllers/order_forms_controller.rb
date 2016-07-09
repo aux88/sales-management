@@ -1,7 +1,7 @@
 class OrderFormsController < ApplicationController
   def new
     @customer = Customer.find_by_id(params[:customer_id])
-    @customer.order_forms.build
+    @order_form = @customer.order_forms.build
   end
   
   def create
@@ -11,7 +11,7 @@ class OrderFormsController < ApplicationController
     else
       # メッセージが保存できなかった時
       flash.now[:alert] = "注文書の保存に失敗しました。"
-      render 'new'
+      render 'visitors/index'
     end
   end
   

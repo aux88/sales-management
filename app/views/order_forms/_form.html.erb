@@ -1,8 +1,6 @@
-<%= simple_form_for @customer do |f| %>
   <%= @customer.name %>
   <div id='order_forms'>
-      <%= f.simple_fields_for :order_forms do |order_form| %>
+      <%= simple_form_for @order_form do |order_form| %>
           <%= render 'order_form_fields', f: order_form %>
       <% end %>
   </div>
-<% end %>

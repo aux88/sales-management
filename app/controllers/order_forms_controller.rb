@@ -1,6 +1,7 @@
 class OrderFormsController < ApplicationController
   def new
-    @order_form = OrderForm.new
+    @customer = Customer.find_by_id(params[:customer_id])
+    @customer.order_forms.build
   end
   
   def create

@@ -19,6 +19,7 @@
         <th>#</th>
         <th>名前</th>
         </th>
+        </th>
       </tr>
     </thead>
     <tbody>
@@ -26,7 +27,8 @@
       <tr>
         <th scope="row"><%= index %></th>
         <td><%= customer.name %></td>
-        <td><%= link_to '表示', customer_path(customer) %></td>
+        <td><%= link_to '顧客情報を表示', customer_path(customer) %></td>
+        <td><%= link_to '注文書を作成', new_order_form_path(customer_id: customer.id) %></td>
       </tr>
       <% end %>
     </tbody>

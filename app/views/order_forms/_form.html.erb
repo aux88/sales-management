@@ -1,13 +1,8 @@
-<%= simple_form_for @order_form do |f| %>
-  <%= f.input :order_date %>
-  <div id='orders'>
-      <%= f.simple_fields_for :orders do |order| %>
-        <%= render 'order_fields', f: order %>
+<%= simple_form_for @customer do |f| %>
+  <%= @customer.name %>
+  <div id='order_forms'>
+      <%= f.simple_fields_for :order_forms do |order_form| %>
+          <%= render 'order_form_fields', f: order_form %>
       <% end %>
-      <div class='links'>
-          <%= link_to_add_association '注文を追加', f, :orders %>
-      </div>
   </div>
-  
-  <%= f.button :submit %>
 <% end %>

@@ -16,6 +16,6 @@ class OrderFormsController < ApplicationController
   end
   
   def order_form_params
-    params.require(:order_form).permit(:order_date, orders_attributes: [:id, :title, :date, :quantity, :_destroy])
+    params.require(:order_form).permit(:order_date, :customer_id, orders_attributes: [:id, :title, :date, :quantity, :_destroy])
   end
 end

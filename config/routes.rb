@@ -2,6 +2,7 @@ Rails.application.routes.draw do
   root to: 'visitors#index'
   resources :order_forms
   resources :customers
+  resources :orders
   get '/customers/index'
   get '/auth/:provider/callback' => 'sessions#create'
   get '/signin' => 'sessions#new', :as => :signin

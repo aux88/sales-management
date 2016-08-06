@@ -1,0 +1,30 @@
+<div class="container">
+    <table class="table">
+        <thead>
+      <tr>
+        <th>#</th>
+        <th>顧客名</th>
+        <th>タイトル</th>
+        <th>メッセージ日付</th>
+        <th>数量</th>
+        <th>注文受付日</th>
+      </tr>
+    </thead>
+    <tbody>
+      <% @orders.each.with_index(1) do |order, index| %>
+      <tr>
+        <th scope="row"><%= index %></th>
+        <% if order.order_form.customer != nil %>
+          <td><%= order.order_form.customer.name %></td>
+        <% else %>
+          <td>不明な顧客</td>
+        <% end %>
+        <td><%= order.title %></td>
+        <td><%= order.date %></td>
+        <td><%= order.quantity %></td>
+        <td><%= order.order_form.order_date %></td>
+      </tr>
+      <% end %>
+    </tbody>
+    </table>
+</div>

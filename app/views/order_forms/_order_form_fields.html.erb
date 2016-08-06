@@ -1,4 +1,5 @@
     <%= f.input :order_date %>
+    <%= f.hidden_field :customer_id %>
     <div id='orders'>
         <%= f.simple_fields_for :orders do |order| %>
           <%= render 'order_fields', f: order %>
